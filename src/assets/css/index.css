@@ -1,0 +1,100 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+html,body{
+  font-size: 14px;
+}
+
+li{
+  list-style: none;
+}
+a{
+  color: #fff;
+  text-decoration: none ;
+}
+a:hover,a:visited{
+  text-decoration: none;
+}
+
+.fr{
+  float: right;
+}
+.fl{
+  float: left;
+}
+.clearfix:before{
+  display: table;
+  line-height: 0;
+  content: '';
+}
+
+.clearfix:after{
+  display: table;
+  line-height: 0;
+  content: '';
+  clear: both;
+}
+
+.left{
+  text-align: center;
+  padding: 0px;
+}
+.headimg{
+  width: 80px;
+  border: 2px solid #000;
+  margin: 20px auto;
+}
+.sidebar-item{
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+}
+.sidebar-item:hover{
+  background-color: #ddd;
+}
+.sidebar-item +.sidebar-item{
+  margin-top: 2px;
+}
+.sidebar-item a{
+  color: #000;
+  padding: 10px;
+  display: block;
+  
+}
+.sidebar-item.active{
+  background: #000;
+}
+.sidebar-item.active a{
+  color: #fff;
+}
+
+.sidebar-item span{
+  margin-left: 12px;
+  vertical-align: middle;        
+}
+.middle{
+  font-weight: 300;
+}
+
+.middle .catelog{
+  padding-top: 60px;
+}
+.middle .catelog a{
+  color: #000;
+}
+.middle .catelog .catelog-item{
+  height: 40px;
+  line-height: 40px;
+}
+
+.middle .catelog .catelog-item:hover{
+
+}
+.middle .catelog .catelog-item a{
+  padding-left: 40px;
+}
+.middle .catelog .catelog-item:hover a{
+  text-decoration: underline;
+}
