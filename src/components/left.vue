@@ -4,78 +4,89 @@
             <img src="../assets/head-img.jpg" alt="" class='img-circle headimg'>
         </router-link>
         <ul class='sidebar'>
-            <li class="sidebar-item active">
-                <router-link to='/right'>
-                    <img src="../assets/shoot.svg" alt="">
-                    <span>摄影</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/font-end.svg" alt="">
-                    <span>前端</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/resource.svg" alt="">
-                    <span>资源</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/code.svg" alt="">
-                    <span>编程</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/think.svg" alt="">
-                    <span>思考</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/speech.svg" alt="">
-                    <span>演讲</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/idea.svg" alt="">
-                    <span>想法</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/tag.svg" alt="">
-                    <span>标签</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/file.svg" alt="">
-                    <span>归档</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/search.svg" alt="">
-                    <span>搜索</span>
-                </router-link>
-            </li>
-            <li class="sidebar-item">
-                <router-link to=''>
-                    <img src="../assets/about.svg" alt="">
-                    <span>关于</span>
+            <li class ='sidebar-item'  v-for='item in navItems'  v-on:click="select(item.id)" v-bind:class="{active:state===item.id}">
+                <router-link v-bind:to='item.to'>
+                    <img v-bind:src='BASEIMGURL+item.to+".svg"' alt="">
+                    <span>{{item.catename}}</span>
                 </router-link>
             </li>
         </ul>
     </div>
 </template>
 <script>
+const BASEIMGURL = "../src/assets/"
+let navItems = [
+    {
+        id:1,
+        catename:'摄影',
+        to:'shoot'
+    },
+       {
+        id:2,           
+        catename:'前端',
+        to:'font-end'
+    },   {
+        id:3,
+        catename:'资源',
+        to:'resource'
+    },   {
+        id:4,
+        catename:'编程',
+        to:'code'
+    },   {
+        id :5,
+        catename:'思考',
+        to:'think'
+    },   {
+        id:6,
+        catename:'演讲',
+        to:'speech'
+    },   {
+        id:7,
+        catename:'想法',
+        to:'idea'
+    },   {
+        id:8,
+        catename:'标签',
+        to:'tag'
+    },   {
+        id:9,
+        catename:'归档',
+        to:'file'
+    },
+     {
+         id:10,
+        catename:'搜索',
+        to:'search'
+    },
+     {
+         id:11,
+        catename:'关于',
+        to:'about'
+    },
+
+] 
+/**@state
+ * 
+ * 此参数是用来记录哪个标签被选中，默认选中摄影
+ * 
+ */
 export default {
-  
+  data(){
+      return{
+          BASEIMGURL,
+          navItems,
+          state:0
+      }
+  },
+  methods:{
+      select(id){
+          if(id == this.state){
+              return
+          }
+          this.state = id;
+      }
+  }
 }
 </script>
 <style>
