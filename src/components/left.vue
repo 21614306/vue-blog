@@ -5,7 +5,7 @@
         </router-link>
         <ul class='sidebar'>
             <li class ='sidebar-item'  v-for='item in navItems'  v-on:click="select(item.id)" v-bind:class="{active:state===item.id}">
-                <router-link v-bind:to='item.to'>
+                <router-link v-bind:to='"/"+item.to'>
                     <img v-bind:src='BASEIMGURL+item.to+".svg"' alt="">
                     <span>{{item.catename}}</span>
                 </router-link>
