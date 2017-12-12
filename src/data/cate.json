@@ -1,0 +1,59 @@
+{
+    "cateItem": [
+        {
+            "id": 1,
+            "catename": "摄影",
+            "to": "shoot"
+        },
+        {
+            "id": 2,
+            "catename": "前端",
+            "to": "font-end"
+        },
+        {
+            "id": 3,
+            "catename": "资源",
+            "to": "resource"
+        },
+        {
+            "id": 4,
+            "catename": "编程",
+            "to": "code"
+        },
+        {
+            "id": 5,
+            "catename": "思考",
+            "to": "think"
+        },
+        {
+            "id": 6,
+            "catename": "演讲",
+            "to": "speech"
+        },
+        {
+            "id": 7,
+            "catename": "想法",
+            "to": "idea"
+        },
+        {
+            "id": 8,
+            "catename": "标签",
+            "to": "tag"
+        },
+        {
+            "id": 9,
+            "catename": "归档",
+            "to": "file"
+        },
+        {
+            "id": 10,
+            "catename": "搜索",
+            "to": "search"
+        },
+        {
+            "id": 11,
+            "catename": "关于",
+            "to": "about"
+        }
+    ]
+}
