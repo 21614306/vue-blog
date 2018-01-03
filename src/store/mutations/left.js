@@ -1,5 +1,8 @@
 import * as types from '../type.js'
 import axios from 'axios'
+
+const BASEURL ='http://127.0.0.1/myblog/public/api/'
+
 let state ={
     navItems:[]
 }
@@ -12,9 +15,8 @@ let getter ={
 
 let actions={
     getNavItems({commit}){
-        // console.log(1);
-        axios.get('/src/data/cate.json').then(function(res){
-           commit('getNavItems',{data:res.data.cateItem}) 
+        axios.get(BASEURL+'get_cates').then(function(res){
+           commit('getNavItems',{data:res.data}) 
         }).catch(function(err){
             console.log(err)
         })

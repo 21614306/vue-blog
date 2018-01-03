@@ -9,19 +9,17 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: [
           'vue-style-loader',
           'css-loader'
         ],
-      },      {
+      }, {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
+          loaders: {}
           // other vue-loader options go here
         }
       },
@@ -52,6 +50,19 @@ module.exports = {
   },
   performance: {
     hints: false
+  },
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true,
+    proxy: {
+      "/api": {
+        target:{
+          "host":'127.0.0.1/myblog/public',
+          "protocol":'http:',
+          "port":80
+        }
+      }
+    }
   },
   devtool: '#eval-source-map'
 }
